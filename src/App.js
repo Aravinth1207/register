@@ -7,9 +7,12 @@ import EMPD from './EMPD';
 import UploadResume from './UploadResume';
 import { post } from 'axios';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
+  const navigate = useNavigate();
+
   const body = {
     name: useSelector(state => state.form.name),
     email: useSelector(state => state.form.email),
