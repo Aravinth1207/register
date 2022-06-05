@@ -27,7 +27,7 @@ const UploadResume = props => {
             const updatedList = [...fileList, newFile];
             setFileList(updatedList);
             props.onFileChange(updatedList);
-            const URL = "http://localhost:8080/upload";
+            const URL = "http://localhost:5000/uploader";
             const formData = new FormData();
             formData.append('file', (newFile));
             const config = {

@@ -1,5 +1,4 @@
 {
-  "homepage": "https://aravinth1207.github.io/register/",
   "name": "redux",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +15,7 @@
     "bootstrap": "^5.1.3",
     "ethereumjs-wallet": "^1.0.2",
     "react": "^18.0.0",
+    "react-aad-msal": "^2.3.5",
     "react-bootstrap": "^2.3.0",
     "react-dom": "^18.0.0",
     "react-dropzone": "^12.0.5",

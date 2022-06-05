@@ -7,11 +7,10 @@ import EMPD from './EMPD';
 import UploadResume from './UploadResume';
 import { post } from 'axios';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+
 
 
 function App() {
-  const navigate = useNavigate();
 
   const body = {
     name: useSelector(state => state.form.name),
@@ -19,19 +18,16 @@ function App() {
     phone: useSelector(state => state.form.phone),
     password: useSelector(state => state.form.password),
     city: useSelector(state => state.form.city),
-    pagetwo: {
-      school: useSelector(state => state.form2.school),
-      highschool: useSelector(state => state.form2.highschool),
-      schoolm: useSelector(state => state.form2.schoolm),
-      highschoolm: useSelector(state => state.form2.highschoolm),
-    },
-    pagethree: {
-      companyname: useSelector(state => state.form3.companyname),
-      salary: useSelector(state => state.form3.salary),
-      jobtype: useSelector(state => state.form3.jobtype),
-      designation: useSelector(state => state.form3.designation),
-    },
+    school: useSelector(state => state.form2.school),
+    highschool: useSelector(state => state.form2.highschool),
+    schoolm: useSelector(state => state.form2.schoolm),
+    highschoolm: useSelector(state => state.form2.highschoolm),
+    company: useSelector(state => state.form3.companyname),
+    salary: useSelector(state => state.form3.salary),
+    jobtype: useSelector(state => state.form3.jobtype),
+    designation: useSelector(state => state.form3.designation),
   }
+
   const [show, setShow] = React.useState(false);
   const [show2, setShow2] = React.useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
@@ -47,7 +43,7 @@ function App() {
     setShow2(value);
   }
   const handleUpload = () => {
-    const URL1 = "http://localhost:8080/savedetails";
+    const URL1 = "http://localhost:5000/api/register";
 
     const config1 = {
       headers: {
